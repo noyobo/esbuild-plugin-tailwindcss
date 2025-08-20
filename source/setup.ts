@@ -1,7 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import tailwindcss from '@tailwindcss/postcss';
-import autoprefixer from 'autoprefixer';
 import type {
 	OnLoadArgs,
 	OnLoadResult,
@@ -34,7 +33,6 @@ export const getSetup =
 			const postcssPlugins: PostcssPlugin[] = [
 				...(userPostcssPlugins?.prepend || []),
 				tailwindcss(),
-				autoprefixer(),
 				...(userPostcssPlugins?.append || []),
 			];
 
